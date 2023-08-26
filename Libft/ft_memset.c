@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/18 11:42:23 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/18 16:10:45 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	char	*b_cpy;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	b_cpy = (char *)b;
+	while (len)
+	{
+		b_cpy[len - 1] = c;
+		len--;
+	}
+	return (b);
 }

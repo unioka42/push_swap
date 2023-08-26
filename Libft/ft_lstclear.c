@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/23 18:09:22 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/23 18:42:00 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_list	*tmp;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	if (del == NULL)
+		return ;
+	while (*lst != NULL)
+	{
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = tmp;
+	}
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/22 17:59:51 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/25 21:32:35 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(void *content)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_list	*node;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

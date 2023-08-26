@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/18 16:31:41 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/20 15:34:11 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	unsigned char	*dst_cpy;
+	unsigned char	*src_cpy;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	dst_cpy = (unsigned char *)dst;
+	src_cpy = (unsigned char *)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (n)
+	{
+		dst_cpy[n - 1] = src_cpy[n - 1];
+		n--;
+	}
+	return (dst);
 }

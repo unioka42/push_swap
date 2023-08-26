@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/23 18:46:35 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/23 19:21:03 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (argc < 2)
-		return (-1);
-	return (0);
+	if (f == NULL)
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

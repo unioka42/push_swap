@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/23 17:09:37 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/23 17:25:18 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	size_t	count;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	if (lst == NULL)
+		return (0);
+	count = 1;
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

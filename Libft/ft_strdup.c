@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/20 13:52:08 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/20 17:56:05 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *s1)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	size_t	len;
+	char	*p;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	len = ft_strlen(s1);
+	p = (char *)malloc(sizeof(char) * len + 1);
+	if (p == NULL)
+		return (NULL);
+	ft_memcpy((void *)p, (void *)s1, len);
+	p[len] = '\0';
+	return (p);
 }

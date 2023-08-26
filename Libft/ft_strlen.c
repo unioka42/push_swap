@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/18 11:32:11 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/18 16:01:12 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	size_t	i;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/17 17:38:42 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/17 18:16:45 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	lower_alpha;
+	int	upper_alpha;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	lower_alpha = (c >= 'a' && c <= 'z');
+	upper_alpha = (c >= 'A' && c <= 'Z');
+	return (lower_alpha || upper_alpha);
 }

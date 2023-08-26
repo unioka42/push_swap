@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/22 15:20:32 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/22 15:28:54 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	size_t	i;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], sizeof(char));
+		i++;
+	}
 }

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/17 18:11:47 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/17 18:16:54 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+int	ft_isdigit(int c)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	result;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	result = (c >= '0' && c <= '9');
+	return (result);
 }

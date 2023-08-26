@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 22:15:14 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/26 21:05:34 by kokada           ###   ########.fr       */
+/*   Created: 2023/05/20 17:59:19 by kokada            #+#    #+#             */
+/*   Updated: 2023/05/25 21:33:33 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	char	*p;
 
-	if (argc < 2)
-		return (-1);
-	return (0);
+	if (s == NULL)
+		return (NULL);
+	p = (char *)malloc(sizeof(char) * len + 1);
+	if (p == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		p[0] = '\0';
+	else
+	{
+		ft_memcpy(p, s + start, len);
+		p[len] = '\0';
+	}
+	return (p);
 }
