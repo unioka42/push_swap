@@ -6,17 +6,22 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:05:26 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/27 16:15:52 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/10 02:21:48 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/libft.h"
 #include <stdio.h>
 
+typedef struct s_stack	t_stack;
+
 typedef struct s_stack
 {
-	int	a;
-}		t_stack;
+	int					value;
+	int					index;
+	t_stack				*next;
+}						t_stack;
 
+void					stack_init(int argc, char **argv, t_stack **stack);
 // utils.c
-void	free_array(void **ptr);
+void					free_array(void **ptr);

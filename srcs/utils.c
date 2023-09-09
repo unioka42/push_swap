@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:52:32 by kokada            #+#    #+#             */
-/*   Updated: 2023/08/27 16:01:31 by kokada           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:12:06 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	free_array(void **ptr)
 	int	i;
 
 	i = 0;
-	while (ptr[i] != NULL)
-	{
-		free(ptr[i]);
-	}
+	while (ptr[i])
+		free(ptr[i++]);
 	free(ptr);
 }
