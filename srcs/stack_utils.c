@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 15:05:26 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/10 03:34:09 by kokada           ###   ########.fr       */
+/*   Created: 2023/09/10 03:11:48 by kokada            #+#    #+#             */
+/*   Updated: 2023/09/10 04:22:32 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-#include <stdio.h>
+#include "push_swap.h"
 
-typedef struct s_stack	t_stack;
-
-typedef struct s_stack
+int	is_sort(t_stack **stack)
 {
-	int					value;
-	int					index;
-	t_stack				*next;
-}						t_stack;
+	t_stack	*i_stack;
 
-void					stack_init(int argc, char **argv, t_stack **stack);
-// utils.c
-void					free_array(void **ptr);
-int						isdigit_array(char *array);
-// stack_utils.c
-int						is_sort(t_stack **stack);
+	i_stack = *stack;
+	while (i_stack->next)
+	{
+		if (i_stack->value > i_stack->next->value)
+			return (0);
+		i_stack = i_stack->next;
+	}
+	return (1);
+}
