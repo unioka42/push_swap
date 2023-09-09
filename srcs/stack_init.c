@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 16:26:49 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/10 02:21:12 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/10 02:40:01 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ void	stack_init(int argc, char **argv, t_stack **stack)
 		i++;
 	while (argv[i] != NULL)
 	{
+		if (!isdigit_array(argv[i]))
+		{
+			ft_putstr_fd("err\n", 1);
+			return ;
+		}
 		value = ft_atoi(argv[i]);
 		stack_add(stack, value);
 		i++;
