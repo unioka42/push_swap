@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:05:26 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/11 13:51:09 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/11 22:05:09 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int						isdigit_array(char *array);
 int						is_sort(t_stack **stack);
 int						get_stack_min(t_stack **stack);
 int						get_stack_max(t_stack **stack);
+int						get_stack_size(t_stack *stack);
 // swap_cmd.c
 void					s_swap(t_stack **stack_a, t_stack **stack_b);
 void					r_swap(t_stack **stack_a, t_stack **stack_b);
