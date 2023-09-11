@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 15:52:32 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/10 02:42:46 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/11 14:56:06 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	isdigit_array(char *array)
 	int	i;
 
 	i = 0;
+	if (array[0] == '-' && ft_isdigit(array[1]))
+		i += 2;
 	while (array[i])
 	{
 		if (!ft_isdigit(array[i]))
