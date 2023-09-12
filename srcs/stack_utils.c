@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 03:11:48 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/11 23:55:07 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/12 02:52:22 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,11 @@ int	get_stack_size(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+t_stack	*stack_last(t_stack *stack)
+{
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
