@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:19:16 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/12 15:38:49 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/12 16:39:16 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,24 @@ void	reverse_rotate(t_stack **stack)
 	last_stack->next = *stack;
 	*stack = last_stack;
 	i_stack->next = NULL;
+}
+
+void	push(t_stack **stack_from, t_stack **stack_to)
+{
+	t_stack	*tmp;
+
+	tmp = *stack_from;
+	*stack_from = (*stack_from)->next;
+	if (*stack_to)
+	{
+		tmp->next = *stack_to;
+		*stack_to = tmp;
+	}
+	else
+	{
+		tmp->next = NULL;
+		*stack_to = tmp;
+	}
 }
 
 void	s_swap(t_stack **stack_a, t_stack **stack_b)
@@ -106,14 +124,16 @@ void	rr_swap(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	p_swap(t_stack **stack_a, t_stack **stack_b)
+void	p_swap(t_stack **stack_a, t_stack **stack_b, int is_a)
 {
-	if (stack_b == NULL)
+	if (is_a)
 	{
+		push(stack_b, stack_a);
 		ft_putendl_fd("pa", 1);
 	}
 	else
 	{
+		push(stack_a, stack_b);
 		ft_putendl_fd("pb", 1);
 	}
 }
