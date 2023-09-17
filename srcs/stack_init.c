@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 16:26:49 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/10 02:40:01 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/17 23:12:38 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	stack_add(t_stack **stack, int value)
 
 	new_stack = (t_stack *)malloc(sizeof(t_stack));
 	new_stack->value = value;
+	new_stack->index = -1;
 	new_stack->next = NULL;
 	if (*stack == NULL)
 	{
@@ -30,6 +31,23 @@ static void	stack_add(t_stack **stack, int value)
 		while (i_stack->next)
 			i_stack = i_stack->next;
 		i_stack->next = new_stack;
+	}
+}
+
+void	set_index_stack(t_stack **stack)
+{
+	int		i;
+	t_stack	*tmp;
+	t_stack	*i_stack;
+
+	i_stack = *stack;
+	i = 0;
+	while (i_stack)
+	{
+		tmp = find_min_stack(*stack);
+		tmp->index = i;
+		i_stack = i_stack->next;
+		i++;
 	}
 }
 
@@ -47,7 +65,7 @@ void	stack_init(int argc, char **argv, t_stack **stack)
 	{
 		if (!isdigit_array(argv[i]))
 		{
-			ft_putstr_fd("err\n", 1);
+			ft_putendl_fd("err", 1);
 			return ;
 		}
 		value = ft_atoi(argv[i]);
@@ -56,4 +74,5 @@ void	stack_init(int argc, char **argv, t_stack **stack)
 	}
 	if (argc == 2)
 		free_array((void **)argv);
+	set_index_stack(stack);
 }
