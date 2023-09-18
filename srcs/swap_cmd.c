@@ -6,7 +6,7 @@
 /*   By: kokada <kokada@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:19:16 by kokada            #+#    #+#             */
-/*   Updated: 2023/09/12 16:39:16 by kokada           ###   ########.fr       */
+/*   Updated: 2023/09/18 15:33:47 by kokada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	swap(t_stack **stack)
 {
-	int	tmp;
+	int	tmp_val;
+	int	tmp_index;
 
-	tmp = (*stack)->value;
+	tmp_val = (*stack)->value;
+	tmp_index = (*stack)->index;
 	(*stack)->value = (*stack)->next->value;
-	(*stack)->next->value = tmp;
+	(*stack)->index = (*stack)->next->index;
+	(*stack)->next->value = tmp_val;
+	(*stack)->next->index = tmp_index;
 }
 
 void	rotate(t_stack **stack)
